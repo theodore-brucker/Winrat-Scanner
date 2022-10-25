@@ -12,9 +12,9 @@ def __ping(target, args):
 
 def __ssh(target, args):
     if len(args) == 1:
-        target.checkSSH(args[0])
+        target.SSH(args[0])
     else:
-        target.checkSSH()
+        target.SSH()
 
 
 def __quit(target, args):

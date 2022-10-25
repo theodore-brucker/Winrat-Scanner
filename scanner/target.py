@@ -19,11 +19,11 @@ class Target:
         if "Received = 4" in response:
             print(f"Ping to {self.ip} successful")
 
-    def checkSSH(self, port=22):
+    def SSH(self, port=22):
         ssh_client = paramiko.SSHClient()
         try:
             ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            ssh_client.connect('10.3.32.32', port=22,
+            ssh_client.connect('10.3.32.32', port=port,
                                username='amumu', password='amumu')
         except paramiko.SSHException:
             print("Login attempt failed")

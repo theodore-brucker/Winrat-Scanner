@@ -20,8 +20,7 @@ def run(t):
     while True:
         print("------------------------------------------")
 
-        commandInput = input("Type a command to run: ").split(" ")
-        command, args = commandInput[0], commandInput[1:]
+        command, *args = input("Type a command to run: ").split(" ")
         fn, minArgs, maxArgs = commands.getCommand[command]
 
         if not checkArgnum(minArgs, maxArgs, args):
