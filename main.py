@@ -1,4 +1,5 @@
 import os
+import commands
 from target import Target
 
 #Main 
@@ -8,16 +9,7 @@ def main():
     target = Target(targetIP, targetPorts)
     run(target)
 
-commandArgNums = {
-    "setip": (1, 1),
-    "addports": (1, None),
-    "ping": (0, 0),
-    "ssh": (0, 1),
-    "quit": (0, 0),
-}
-
-def checkArgnum(command, args):
-    minArgs, maxArgs = commandArgNums[command]
+def checkArgnum(minArgs, maxArgs, args):
     if maxArgs is None:
         return minArgs <= len(args)
     return minArgs <= len(args) <= maxArgs
@@ -26,26 +18,15 @@ def run(target):
     while True:
         print("------------------------------------------")
 
-        hello = input("Type a command to run: ").split(" ")
-        command, args = hello[0], hello[1:]
-        
-        if not checkArgnum(command, args):
+        commandInput = input("Type a command to run: ").split(" ")
+        command, args = commandInput[0], commandInput[1:]
+        fn, minArgs, maxArgs = commands.getCommand[command]
+
+        if not checkArgnum(minArgs, maxArgs, args):
             print("Unexpected number of arguments")
             continue
 
-        if command == "setip":
-            target.setIP(args[0])
-        if command == "addports":
-            target.addPorts(*args)
-        if command == "ping":
-            target.pingConnectivity()
-        elif command == "ssh":
-            if len(args) == 1:
-                target.checkSSH(args[0])
-            else:
-                target.checkSSH()
-        elif command == "quit":
-            quit()
+        fn(target, args)
 
 #Calls main when main.py is executed
 if __name__ == "__main__":
