@@ -21,7 +21,12 @@ def run(t):
         print("------------------------------------------")
 
         command, *args = input("Type a command to run: ").split(" ")
-        fn, minArgs, maxArgs = commands.getCommand[command]
+        fn, minArgs, maxArgs = commands.getCommand.get(
+            command, (None, None, None))
+
+        if fn is None:
+            print("Unexpected command")
+            continue
 
         if not checkArgnum(minArgs, maxArgs, args):
             print("Unexpected number of arguments")
