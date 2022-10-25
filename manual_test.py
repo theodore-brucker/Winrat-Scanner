@@ -4,10 +4,9 @@ from target import Target
 
 def main():
     os.system('cls')
-    targetIP = input("IP: ")
-    targetPorts = input("Ports separated by ',': ").replace(" ", "").split(",")
+    targetIP = "1.1.1.1"
+    targetPorts = []
     target = Target(targetIP, targetPorts)
-    print()
     target.run()
 
 
