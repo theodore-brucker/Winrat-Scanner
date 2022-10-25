@@ -1,13 +1,10 @@
-import os
-from target import Target
+import interface.cli as cli
+import scanner.target as target
 
 
 def main():
-    os.system('cls')
-    targetIP = "1.1.1.1"
-    targetPorts = []
-    target = Target(targetIP, targetPorts)
-    target.run()
+    t = target.Target("1.1.1.1")
+    cli.run(t)
 
 
 if __name__ == "__main__":
