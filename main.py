@@ -1,7 +1,7 @@
 import os
 from target import Target
 
-
+#Main 
 def main():
     os.system('cls')
     targetIP = input("IP: ")
@@ -10,6 +10,6 @@ def main():
     print()
     target.run()
 
-
+#Calls main when main.py is executed
 if __name__ == "__main__":
     main()
