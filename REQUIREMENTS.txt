@@ -1,0 +1,16 @@
+#Requirements Document
+#10/24/2022
+
+
+#Description of product
+#Port scanning utility for detecting misconfiguration and known vulnerabilities
+
+#R1: This application shall allow user to designate a target ip
+
+#R2: This application shall allow user to designate a range of target ports
+
+#R3: This application shall send traffic to the ip/port
+
+#R3: This application shall record the response to it's sent traffic
+
+#R4: This application shall analyze the response traffic
