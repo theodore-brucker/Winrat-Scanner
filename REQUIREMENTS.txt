@@ -10,7 +10,9 @@
 #R2: This application shall allow user to designate a range of target ports
 
 #R3: This application shall send traffic to the ip/port
+    #R3.1 This application shall be capable of sending ICMP ping to an ip
+    #R3.2 This application shall be capable of sending customized packets to target ports via various (TBD) protocols
 
-#R3: This application shall record the response to it's sent traffic
+#R4: This application shall record the response to it's sent traffic
 
-#R4: This application shall analyze the response traffic
+#R5: This application shall analyze the response traffic
