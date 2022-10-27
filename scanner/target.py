@@ -1,6 +1,6 @@
 import os
 import paramiko
-
+from telnetlib import Telnet
 
 class Target:
     def __init__(self, ip, ports=[]):
@@ -32,3 +32,18 @@ class Target:
         output = stdout.readlines()
         for item in output:
             print(item)
+
+    def Telnet(self, ports):
+        
+        for port in ports:
+            tn = Telnet(self.ip, port)
+            tn.write(b'guido\r\n')
+            print(tn.read_all())
+        return self
+
+    def RDP(self, ports):
+        return self
+
+    def POP3(self, ports):
+        return self
+        

@@ -9,6 +9,11 @@ def __addPorts(target, args):
 def __ping(target, args):
     target.pingConnectivity()
 
+def __telnet(target, args):
+    if len(args) == 1:
+        target.Telnet(args[0])
+    else:
+        target.Telnet()
 
 def __ssh(target, args):
     if len(args) == 1:
@@ -27,4 +32,5 @@ getCommand = {
     "ping": (__ping, 0, 0),
     "ssh": (__ssh, 0, 1),
     "quit": (__quit, 0, 0),
+    "telnet": (__telnet, 1, 1)
 }
