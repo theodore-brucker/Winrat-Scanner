@@ -1,1 +1,1 @@
-Port scanner with Danish friend
+CLI with Danish friend
