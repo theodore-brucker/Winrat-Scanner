@@ -1,20 +1,25 @@
 def __setIP(target, args):
     target.setIP(args[0])
 
+
 def __addPorts(target, args):
     target.addPorts(*args)
+
 
 def __ping(target, args):
     target.pingConnectivity()
 
+
 def __ssh(target, args):
     if len(args) == 1:
-        target.checkSSH(args[0])
+        target.SSH(args[0])
     else:
-        target.checkSSH()
+        target.SSH()
+
 
 def __quit(target, args):
     quit()
+
 
 getCommand = {
     "setip": (__setIP, 1, 1),
