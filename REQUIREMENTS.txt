@@ -3,16 +3,29 @@
 
 
 #Description of product
-#Port scanning utility for detecting misconfiguration and known vulnerabilities
+#CLI with variety of tools
 
-#R1: This application shall allow user to designate a target ip
+#Port Scanner
+    #R1: This application shall allow user to designate a target ip
 
-#R2: This application shall allow user to designate a range of target ports
+    #R2: This application shall allow user to designate a range of target ports
 
-#R3: This application shall send traffic to the ip/port
-    #R3.1 This application shall be capable of sending ICMP ping to an ip
-    #R3.2 This application shall be capable of sending customized packets to target ports via various (TBD) protocols
+    #R3: This application shall send traffic to the ip/port
+        #R3.1 This application shall be capable of sending ICMP ping to an ip
+        #R3.2 This application shall be capable of sending customized packets to target ports via various (TBD) protocols
+            #R3.2.1 SSH
+            #R3.2.2 Telnet
+            #R3.2.3 POP3
+            #R3.2.4 RDP
 
-#R4: This application shall record the response to it's sent traffic
+    #R4: This application shall record the response to it's sent traffic
 
-#R5: This application shall analyze the response traffic
+    #R5: This application shall analyze the response traffic
+
+#SSH Session Client
+    #R6: This application shall allow a user to send ssh credentials to an open ssh port
+
+    #R7: This application shall provide an in-application remote terminal via ssh
+
+#Tetris 
+    #R8: This application allows a user to play tetris 
