@@ -21,6 +21,12 @@ def __ssh(target, args):
     else:
         target.SSH()
 
+def __findopen(target, args):
+    if len(args) == 1:
+        target.findOpenPorts(args[0])
+    else:
+        target.findOpenPorts()
+
 
 def __quit(target, args):
     quit()
@@ -32,5 +38,6 @@ getCommand = {
     "ping": (__ping, 0, 0),
     "ssh": (__ssh, 0, 1),
     "quit": (__quit, 0, 0),
-    "telnet": (__telnet, 1, 1)
+    "telnet": (__telnet, 1, 1),
+    "findopen": (__findopen, 1, 1)
 }

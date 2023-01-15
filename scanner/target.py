@@ -1,6 +1,8 @@
 import os
 import paramiko
 from telnetlib import Telnet
+import socket
+from contextlib import closing
 
 class Target:
     def __init__(self, ip, ports=[]):
@@ -18,6 +20,14 @@ class Target:
         print(response)
         if "Received = 4" in response:
             print(f"Ping to {self.ip} successful")
+
+    def findOpenPorts(self, port):
+        for port in self.ports:
+            with closing(socket.socket(socket.AF_INET, socket.SOCK_STREAM)) as sock:
+                if sock.connect_ex((self.ip, port)) == 0:
+                    print("Port %d is open", port)
+                else:
+                    print("Port is not open")
 
     def SSH(self, port=22):
         ssh_client = paramiko.SSHClient()
