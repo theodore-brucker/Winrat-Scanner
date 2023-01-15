@@ -5,6 +5,10 @@ def __setIP(target, args):
 def __addPorts(target, args):
     target.addPorts(*args)
 
+def __help(target, args):
+    print(
+        "help\nquit\nsetip {ip}            - designate a new target\naddports {port range} - add another port range\nping                  - ping target ip on unspecified port\nssh {port}            - ssh to port on target ip\ntelnet {port}         - telnet to port on target ip"
+    )
 
 def __ping(target, args):
     target.pingConnectivity()
@@ -31,8 +35,8 @@ def __findopen(target, args):
 def __quit(target, args):
     quit()
 
-
 getCommand = {
+    "help": (__help, 0, 0),
     "setip": (__setIP, 1, 1),
     "addports": (__addPorts, 1, None),
     "ping": (__ping, 0, 0),
