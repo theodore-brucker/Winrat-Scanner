@@ -1,5 +1,5 @@
 import os
-from scanner import target as target
+import scanner.target as target
 import interface.commands as commands
 
 
@@ -11,6 +11,8 @@ def checkArgnum(minArgs, maxArgs, args):
 
 def createTarget():
     os.system("cls")
+    print(
+        "#####################################\n###########-WINRAT--SCANNER-#########\n#####################################\n")
     targetIP, *targetPorts = input(
         "Input ip and ports separated by a space, ex (ip port1 port2 port3): ").split(" ")
     return target.Target(targetIP, targetPorts)
