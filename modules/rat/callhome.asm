@@ -35,4 +35,4 @@ section .text
     mov ebx, eax      ; File descriptor returned by socket()
     mov ecx, server   ; Pointer to server address
     mov edx, 2        ; Size of server address (16 bits)
-    int 0x80          ; Call kernel
+    int 0x80          ; Call kernel 
