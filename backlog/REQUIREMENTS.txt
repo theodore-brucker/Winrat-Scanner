@@ -5,7 +5,7 @@
 #Description of product
 #CLI with variety of tools
 
-#Port Scanner
+#Scanner
     #R1: This application shall allow user to designate a target ip
 
     #R2: This application shall allow user to designate a range of target ports
@@ -22,12 +22,11 @@
 
     #R5: This application shall analyze the response traffic
 
-#SSH Session Client
-    #R6: This application shall allow a user to send ssh credentials to an open ssh port
+#SSH Session Client (RAT)
+    #R6: Acts as a server to catch traffic from clients
 
     #R7: This application shall provide an in-application remote terminal via ssh
 
-#Tetris 
-    #R8: This application allows a user to play tetris 
+#Keylogger
 
-#New Scope, remote access trojan
+    #R8: Allows server to keylog from clients
