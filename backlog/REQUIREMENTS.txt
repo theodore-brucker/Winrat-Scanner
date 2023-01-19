@@ -29,4 +29,4 @@
 
 #Keylogger
 
-    #R8: Allows server to keylog from clients
+    #R8: Allows server to catalog keylog data from clients
